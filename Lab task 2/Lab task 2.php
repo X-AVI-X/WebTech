@@ -10,7 +10,7 @@
 <?php
 // define variables and set to empty values
 $nameErr = $dobErr = $emailErr = $genderErr = $websiteErr = $bgErr= $degErr="";
-$name = $email = $gender = $comment = $website = $dob = $bg= $deg[]="";
+$name = $email = $gender = $comment = $website = $dob = $bg= $deg[0]= $deg[1]= $deg[2]= $deg[3]="";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (str_word_count($_POST["name"]) > 2) {
     $nameErr = "Max 2 words only";
   } 
-  
   else {
     $name = test_input($_POST["name"]);
     // check if name only contains letters and whitespace
@@ -73,20 +72,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dobErr = "" ;
     $dob = $_POST["dob"];
   }
-  if(isset($_POST['deg'])){
+  if(!empty($_POST['deg'])){
     if (sizeof($_POST["deg"])<2){
     $degErr="Please select at least two fields";
     }else{
     $degErr="";
     $deg=$_POST['deg'];
     }
-  $degErr="Please select at least two fields";
-  }
+  }else $degErr="Please select at least two fields";
 
-  if (empty($_POST['bg'])){
+  if (($_POST['bg'])==""){
     $bgErr="Blood group is requied";
   } else {
     $bgErr="";
+    $bg=$_POST['bg'];
   }
 }
 
@@ -116,29 +115,29 @@ function test_input($data) {
   Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
   <br><br>
   Gender:
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="Female") echo "checked";?> value="Female">Female
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="Male") echo "checked";?> value="Male">Male
+  <input type="radio" name="gender" <?php if (isset($gender) && $gender=="Other") echo "checked";?> value="Other">Other  
   <span class="error">* <?php echo $genderErr;?></span>
   <br><br>
   Degree: 
-  <input type="checkbox" name="deg[]" value="SSC">SSC 
-  <input type="checkbox" name="deg[]" value="HSC">HSC 
-  <input type="checkbox" name="deg[]" value="BSc">BSc 
-  <input type="checkbox" name="deg[]" value="MSc">MSc
+  <input type="checkbox" name="deg[0]" value="SSC" <?php if(isset($_POST['deg'][0])) echo "checked"; ?> >SSC 
+  <input type="checkbox" name="deg[1]" value="HSC" <?php if(isset($_POST['deg'][1])) echo "checked"; ?> >HSC 
+  <input type="checkbox" name="deg[2]" value="BSc" <?php if(isset($_POST['deg'][2])) echo "checked"; ?> >BSc 
+  <input type="checkbox" name="deg[3]" value="MSc" <?php if(isset($_POST['deg'][3])) echo "checked"; ?> >MSc
   <span class="error">* <?php echo $degErr;?></span> 
   <br><br>
   <label for="bg"> Blood group:</label>
   <select id="bg" name="bg">
-  <option value=""></option>
-  <option value="A+">A+</option>
-  <option value="B+">B+</option>
-  <option value="O+">O+</option>
-  <option value="A-">A-</option>
-  <option value="B-">B-</option>
-  <option value="O-">O-</option>
-  <option value="AB+">AB+</option>
-  <option value="AB-">AB-</option>
+    <option value=""></option>
+    <option value="A+" <?php if($bg == 'A+'){ echo ' selected="selected"'; } ?> >A+</option>
+    <option value="B+" <?php if($bg == 'B+'){ echo ' selected="selected"'; } ?> >B+</option>
+    <option value="O+" <?php if($bg == 'O+'){ echo ' selected="selected"'; } ?> >O+</option>
+    <option value="A-" <?php if($bg == 'A-'){ echo ' selected="selected"'; } ?> >A-</option>
+    <option value="B-" <?php if($bg == 'B-'){ echo ' selected="selected"'; } ?> >B-</option>
+    <option value="O-" <?php if($bg == 'O-'){ echo ' selected="selected"'; } ?> >O-</option>
+    <option value="AB+" <?php if($bg == 'AB+'){ echo ' selected="selected"'; } ?> >AB+</option>
+    <option value="AB-" <?php if($bg == 'AB-'){ echo ' selected="selected"'; } ?> >AB-</option>
   </select> 
   <span class="error">* <?php echo $bgErr;?></span>
   <br> <br>
@@ -147,27 +146,27 @@ function test_input($data) {
 
 <?php
 echo "<h2>Your Input:</h2>";
-echo $name;
+echo "<b>Name: </b>".$name;
 echo "<br>";
-echo $email;
+echo "<b>Email: </b>".$email;
 echo "<br>";
-echo $website;
+echo "<b>Website: </b>".$website;
 echo "<br>";
-echo $comment;
+echo "<b>Comment: </b>".$comment;
 echo "<br>";
-echo $gender;
+echo "<b>Gender: </b>".$gender;
 echo "<br>";
-echo $dob;
+echo "<b>Date of Birth: </b>".$dob;
 echo "<br>";
-$i=0;
-while ($i<4){
-  if ($deg[$i] != null){
-    echo $deg[$i]." ";
+echo "<b>Degrees:</b> ";
+if (isset($_POST['deg'])){
+  foreach($_POST['deg'] as $value)
+  {
+    echo $value.' ';
   }
-  $i=$i+1;
-}
+  }
 echo "<br>";
-echo $bg;
+echo "<b>Blood group: </b>".$bg;
 ?>
 
 </body>
