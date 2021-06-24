@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $dobErr = "" ;
     $dob = $_POST["dob"];
   }
-  if(!empty($_POST['deg'])){
+  if (!empty($_POST['deg'])){
     if (sizeof($_POST["deg"])<2){
     $degErr="Please select at least two fields";
     }else{
