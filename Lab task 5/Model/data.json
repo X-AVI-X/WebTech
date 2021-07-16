@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Avijit Paul",
+        "e-mail": "Avijit@gmail.com",
+        "username": "Avi",
+        "password": "1234567@",
+        "gender": "male",
+        "peraddress": "New Senpara, Rangpur",
+        "paddress": "Banani, Dhaka",
+        "city": "Dhaka",
+        "phone": "0171000000"
+    },
+    {
+        "name": "Lorem Ipsum",
+        "e-mail": "lorem@ipsum.com",
+        "username": "lorem",
+        "password": "1234567@",
+        "gender": "Male",
+        "peraddress": "Montreal",
+        "paddress": "Tolores",
+        "city": "Tolores",
+        "phone": "01283874532"
+    },
+    {
+        "name": "Avijit Paul",
+        "e-mail": "avi@gmail.com",
+        "username": "avijit",
+        "password": "1234567@",
+        "gender": "Male",
+        "peraddress": "Dhaka",
+        "paddress": "Toronto",
+        "city": "Toronto",
+        "phone": "0128347834343"
+    }
+]
