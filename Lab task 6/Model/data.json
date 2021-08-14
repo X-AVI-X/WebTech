@@ -1,0 +1,101 @@
+[
+    {
+        "name": "Avijit Paul",
+        "e-mail": "Avijit@gmail.com",
+        "username": "Avi",
+        "password": "1234567@",
+        "gender": "male",
+        "peraddress": "New Senpara, Rangpur",
+        "paddress": "Banani, Dhaka",
+        "city": "Dhaka",
+        "phone": "0171000000"
+    },
+    {
+        "name": "Lorem Ipsum",
+        "e-mail": "lorem@ipsum.com",
+        "username": "lorem",
+        "password": "1234567@",
+        "gender": "Male",
+        "peraddress": "Montreal",
+        "paddress": "Tolores",
+        "city": "Tolores",
+        "phone": "01283874532"
+    },
+    {
+        "name": "Avijit Paul",
+        "e-mail": "avi@gmail.com",
+        "username": "avijit",
+        "password": "1234567@",
+        "gender": "Male",
+        "peraddress": "Dhaka",
+        "paddress": "Toronto",
+        "city": "Toronto",
+        "phone": "0128347834343"
+    },
+    {
+        "name": "Sadia Islam",
+        "e-mail": "sadia@ymail.com",
+        "username": "sadia",
+        "password": "1234567@",
+        "gender": "Female",
+        "peraddress": "Bogra",
+        "paddress": "Dhaka",
+        "city": "Dhaka",
+        "phone": "0124234235"
+    },
+    {
+        "name": "Sadia Islam",
+        "e-mail": "s@ymail.com",
+        "username": "sad",
+        "password": "1234567@",
+        "gender": "Female",
+        "peraddress": "Bogra",
+        "paddress": "Dhaka",
+        "city": "dhaka",
+        "phone": "01848364734"
+    },
+    {
+        "name": "Avijit Paul",
+        "e-mail": "avi@gmail.com",
+        "username": "avi",
+        "password": "1234567@",
+        "gender": "Male",
+        "peraddress": "Dhaka",
+        "paddress": "Rangpur",
+        "city": "dhaka",
+        "phone": "01294893874"
+    },
+    {
+        "name": "John Nash",
+        "e-mail": "john@gmail.com",
+        "username": "john",
+        "password": "1234567@",
+        "gender": "Male",
+        "peraddress": "Dhaka",
+        "paddress": "Rangpur",
+        "city": "",
+        "phone": "0183849234"
+    },
+    {
+        "name": "John Nash",
+        "e-mail": "john@gmail.com",
+        "username": "john",
+        "password": "3275774623",
+        "gender": "Female",
+        "peraddress": "Dhaka",
+        "paddress": "Rangpur",
+        "city": "dhaka",
+        "phone": "0183849234"
+    },
+    {
+        "name": "John Nash",
+        "e-mail": "john@gmail.com",
+        "username": "john",
+        "password": "1111111@",
+        "gender": "Female",
+        "peraddress": "Dhaka",
+        "paddress": "Rangpur",
+        "city": "mymensingh",
+        "phone": "0134535335"
+    }
+]
